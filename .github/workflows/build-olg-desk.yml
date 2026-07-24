@@ -19,3 +19,5 @@ jobs:
     with:
       upload-artifact: true
       upload-tag: "olg-desk-${{ inputs.tag }}"
+
+# Register Actions workflows after initial orphan push
