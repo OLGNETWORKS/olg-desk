@@ -1,0 +1,21 @@
+name: Build OLG Desk (Windows)
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: RustDesk upstream tag
+        required: true
+        default: '1.4.9'
+
+env:
+  RS_PUB_KEY: "${{ secrets.RS_PUB_KEY }}"
+  RENDEZVOUS_SERVER: "${{ secrets.RENDEZVOUS_SERVER }}"
+
+jobs:
+  build-windows:
+    uses: ./.github/workflows/flutter-build.yml
+    secrets: inherit
+    with:
+      upload-artifact: true
+      upload-tag: "olg-desk-${{ inputs.tag }}"
