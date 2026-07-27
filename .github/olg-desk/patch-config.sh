@@ -12,5 +12,6 @@ fi
 sed -i 's|pub const RENDEZVOUS_SERVERS: \&\[\&str\] = \&\["rs-ny.rustdesk.com"\];|pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["rustdesk.olgsys.com"];|' "$CONFIG"
 sed -i 's|pub const RS_PUB_KEY: &str = "OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=";|pub const RS_PUB_KEY: \&str = "lGS++Q2liRIlLGdQvdC+SLaUMDH8tGZWN6I4vbdYLOk=";|' "$CONFIG"
 sed -i 's|pub static ref APP_NAME: RwLock<String> = RwLock::new("RustDesk".to_owned());|pub static ref APP_NAME: RwLock<String> = RwLock::new("OLG Desk".to_owned());|' "$CONFIG"
+sed -i 's|pub static ref ORG: RwLock<String> = RwLock::new("com.carriez".to_owned());|pub static ref ORG: RwLock<String> = RwLock::new("com.olgsys".to_owned());|' "$CONFIG"
 
 echo "OLG Desk server defaults applied to $CONFIG"
